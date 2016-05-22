@@ -1,0 +1,11 @@
+<h1>Add Book</h1>
+
+<form enctype="multipart/form-data" action="{% url 'books:save' %}" method="POST">
+  {% csrf_token %}
+  <ul>
+    {{ form.as_p }}
+  </ul>
+  <input id="add_book" type="submit" value="Add" />
+</form>
+
+<a href="{% url 'books:index' %}">Books</a>
