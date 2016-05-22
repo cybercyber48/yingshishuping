@@ -1,0 +1,25 @@
+<h1>YingShiShuPing/影视书评</h1>
+
+<hr>
+
+<form action="{% url 'main:Search' %}" method="post">{% csrf_token %}
+    <p>Books:</p>
+    <input name="search_text" type="text" value=""/>
+    <input type="submit" value="Search"/>
+</form>
+
+<hr>
+
+<li><a href="{% url 'books:add' %}">Add Books</a></li>
+
+<hr>
+
+<form enctype="multipart/form-data" action="{% url 'main:SearchImage' %}" method="post">{% csrf_token %}
+    {{image_form.as_p}}
+    <input type="submit" value="Search Image"/>
+</form>
+
+<hr>
+
+<li><a href="{% url 'books:index' %}">Books</a></li>
+
